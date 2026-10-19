@@ -1,0 +1,615 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte Mensual Septiembre 2026 — The Wooden Racoon | Caïman Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e1a; --surface:#111827; --surface2:#1a2235; --border:rgba(255,255,255,0.07);
+  --accent:#3DBFAD; --accent2:#c98a52; --accent3:#7c3aed;
+  --text:#e8eaf0; --muted:#6b7a9a; --good:#10b981; --warn:#f59e0b; --bad:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;font-size:clamp(13px,1.5vw,15px)}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(10,14,26,0.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:12px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brandmark{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--accent);line-height:1}
+.brandmark small{display:block;font-family:'DM Sans',monospace;font-style:normal;font-size:8px;letter-spacing:.34em;color:var(--muted);margin-top:3px}
+.topbar-badge{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--muted);font-family:'Syne',sans-serif}
+.topbar-badge span{color:var(--accent);font-weight:700}
+.header{padding:clamp(48px,8vw,80px) clamp(16px,4vw,48px) clamp(32px,5vw,60px);position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(61,191,173,.08) 0%,transparent 70%);pointer-events:none}
+.header::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,138,82,.07) 0%,transparent 70%);pointer-events:none}
+.header-tag{display:inline-block;background:rgba(61,191,173,.1);border:1px solid rgba(61,191,173,.3);color:var(--accent);border-radius:20px;padding:4px 14px;font-size:11px;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+.header h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,52px);line-height:1.1;margin-bottom:8px}
+.header h1 span{color:var(--accent)}
+.header-sub{color:var(--muted);font-size:clamp(13px,1.8vw,16px);margin-bottom:32px;max-width:680px}
+.header-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;max-width:980px}
+.meta-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px}
+.meta-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.meta-value{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--text);margin-top:2px}
+.section{padding:clamp(32px,5vw,60px) clamp(16px,4vw,48px)}
+.section-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px}
+.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(20px,3vw,30px);margin-bottom:24px;color:var(--text)}
+.section+.section{border-top:1px solid var(--border)}
+.sec-intro{color:var(--muted);font-size:13px;margin-bottom:20px;max-width:840px}
+h3.sub{font-family:'Syne',sans-serif;font-size:15px;margin:28px 0 14px;color:var(--accent)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:24px}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-color,var(--accent))}
+.kpi-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:6px}
+.kpi-value{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(22px,3vw,32px);color:var(--text);line-height:1}
+.kpi-sub{font-size:11px;color:var(--muted);margin-top:4px}
+.kpi-badge{display:inline-block;border-radius:20px;padding:2px 10px;font-size:10px;font-weight:700;margin-top:8px;font-family:'Syne',sans-serif}
+.badge-good{background:rgba(16,185,129,.15);color:var(--good);border:1px solid rgba(16,185,129,.3)}
+.badge-warn{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid rgba(245,158,11,.3)}
+.badge-bad{background:rgba(239,68,68,.15);color:var(--bad);border:1px solid rgba(239,68,68,.3)}
+.badge-info{background:rgba(61,191,173,.12);color:var(--accent);border:1px solid rgba(61,191,173,.25)}
+.alert{border-radius:10px;padding:14px 18px;margin:12px 0;border-left:4px solid;font-size:13px}
+.alert-good{background:rgba(16,185,129,.08);border-color:var(--good);color:#a7f3d0}
+.alert-warn{background:rgba(245,158,11,.08);border-color:var(--warn);color:#fde68a}
+.alert-bad{background:rgba(239,68,68,.08);border-color:var(--bad);color:#fca5a5}
+.alert-info{background:rgba(61,191,173,.07);border-color:var(--accent);color:#a5e9df}
+.alert strong{font-weight:700}
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin:16px 0}
+table{width:100%;border-collapse:collapse;min-width:620px}
+thead th{background:var(--surface2);padding:12px 14px;font-size:11px;font-family:'Syne',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;white-space:nowrap;border-bottom:1px solid var(--border)}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:13px;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(255,255,255,.02)}
+.td-name{max-width:290px;overflow:hidden;text-overflow:ellipsis;font-weight:600;white-space:normal}
+.num{font-family:'Syne',sans-serif;font-weight:700}
+.tag{display:inline-block;border-radius:6px;padding:2px 8px;font-size:10px;font-weight:700;font-family:'Syne',sans-serif}
+.tag-tofu{background:rgba(61,191,173,.15);color:var(--accent)}
+.tag-rtg{background:rgba(245,158,11,.15);color:var(--warn)}
+.tag-awa{background:rgba(124,58,237,.15);color:#a78bfa}
+.tag-eu{background:rgba(255,255,255,.08);color:var(--muted)}
+.ad-rank{display:inline-block;border-radius:6px;padding:2px 8px;font-size:10px;font-weight:700;font-family:'Syne',sans-serif}
+.rank-top{background:rgba(16,185,129,.15);color:var(--good);border:1px solid rgba(16,185,129,.3)}
+.rank-bot{background:rgba(239,68,68,.15);color:var(--bad);border:1px solid rgba(239,68,68,.3)}
+.rank-mid{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid rgba(245,158,11,.3)}
+.bar-chart{margin:20px 0}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.bar-label{font-size:12px;color:var(--muted);width:145px;flex-shrink:0;text-align:right}
+.bar-track{flex:1;background:rgba(255,255,255,.05);border-radius:4px;height:28px;position:relative}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:rgba(255,255,255,.92);min-width:52px}
+.bar-val{font-size:11px;color:var(--muted);width:105px;flex-shrink:0}
+.persona-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:20px 0}
+.persona-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.persona-emoji{font-size:26px;margin-bottom:8px}
+.persona-name{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;margin-bottom:4px}
+.persona-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.persona-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.steps{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start}
+.step-priority{font-size:18px;flex-shrink:0;margin-top:2px}
+.step-body h4{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:4px}
+.step-body p{font-size:12.5px;color:var(--muted);line-height:1.55}
+.dest-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.dest-header{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.dest-title{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;word-break:break-word}
+.dest-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:0}
+.dest-metric{padding:16px 18px;border-right:1px solid var(--border);border-top:1px solid var(--border);text-align:center}
+.dest-metric:last-child{border-right:none}
+.dm-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.dm-value{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text)}
+.dest-insight{padding:14px 22px;border-top:1px solid var(--border);border-left:4px solid var(--accent);background:rgba(61,191,173,.04);font-size:12.5px;color:var(--muted)}
+.placement-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.placement-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.placement-icon{font-size:22px;margin-bottom:6px}
+.placement-name{font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:600}
+.placement-roas{font-family:'Syne',sans-serif;font-weight:800;font-size:20px}
+.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.chart-title{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
+.chart-leg{display:flex;gap:14px;font-size:11px;color:var(--muted)}
+.ld{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.conclusion{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:clamp(24px,4vw,40px);margin-top:24px}
+.conclusion p{font-size:clamp(13px,1.6vw,15px);line-height:1.8;color:#c5cae0;margin-bottom:12px}
+.conclusion p:last-child{margin-bottom:0}
+.conclusion strong{color:var(--accent)}
+.footer{background:var(--surface);border-top:1px solid var(--border);padding:24px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-credit{font-size:11px;color:var(--muted)}
+.footer-credit strong{color:var(--accent)}
+.highlight-box{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:12px 0}
+.highlight-box h4{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;margin-bottom:6px;color:var(--accent)}
+.highlight-box p{font-size:12.5px;color:var(--muted);line-height:1.6}
+.highlight-box strong{color:#c5cae0}
+.glossary{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 20px;margin-bottom:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px 24px}
+.glossary div{font-size:11px;color:var(--muted)}
+.glossary span{color:var(--accent);font-weight:700}
+</style></head><body>
+
+<div class="topbar">
+  <div class="brandmark">The Wooden Racoon<small>ONLY WOOD</small></div>
+  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+    <div style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em">Caïman Agency</div>
+    <div class="topbar-badge">Septiembre 2026 · <span>1–30 sept</span> · Meta Ads · WDR</div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-tag">📊 Reporte Mensual de Rendimiento</div>
+  <h1>Septiembre 2026 <span>The Wooden Racoon · Meta Ads</span></h1>
+  <p class="header-sub">Mes de dos velocidades: el retargeting se convierte en el motor de la cuenta con ROAS 5,04×, mientras el TOFU se desploma por una fuga creativa concreta. El ticket medio sube un 30% y el mapa de audiencia se da la vuelta.</p>
+  <div class="header-meta">
+    <div class="meta-item"><div class="meta-label">Periodo</div><div class="meta-value">1 – 30 septiembre 2026</div></div>
+    <div class="meta-item"><div class="meta-label">Moneda</div><div class="meta-value">EUR</div></div>
+    <div class="meta-item"><div class="meta-label">Campañas con entrega</div><div class="meta-value">4</div></div>
+    <div class="meta-item"><div class="meta-label">Atribución</div><div class="meta-value">7d clic / 1d vista</div></div>
+    <div class="meta-item"><div class="meta-label">Comparativa</div><div class="meta-value">vs agosto 2026</div></div>
+    <div class="meta-item"><div class="meta-label">Valoración</div><div class="meta-value">🟡 Mixto · corregible</div></div>
+  </div>
+</div>
+
+<!-- ══════════ 01 ══════════ -->
+<div class="section"><div class="section-num">01</div><div class="section-title">Resumen Ejecutivo</div>
+
+<div class="glossary">
+  <div><span>ROAS</span> — Euros de venta por cada €1 invertido.</div>
+  <div><span>CPA</span> — Lo que cuesta conseguir una compra.</div>
+  <div><span>AOV</span> — Ticket medio por pedido.</div>
+  <div><span>CPM</span> — Coste por 1.000 impresiones.</div>
+  <div><span>CTR</span> — % de personas que ven el anuncio y clican en el enlace.</div>
+  <div><span>Frecuencia</span> — Veces que una misma persona ve el anuncio.</div>
+  <div><span>ATC</span> — Añadidos al carrito.</div>
+  <div><span>Margen bruto publicitario</span> — AOV menos CPA, por venta.</div>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card" style="--accent-color:var(--warn)"><div class="kpi-label">Ventas atribuidas a Meta</div><div class="kpi-value" style="color:var(--warn)">2.665€</div><div class="kpi-sub">Agosto: 3.003€</div><span class="kpi-badge badge-warn">−11,3% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--bad)"><div class="kpi-label">Compras</div><div class="kpi-value" style="color:var(--bad)">54</div><div class="kpi-sub">Agosto: 79</div><span class="kpi-badge badge-bad">−31,6% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--warn)"><div class="kpi-label">ROAS</div><div class="kpi-value" style="color:var(--warn)">1,86×</div><div class="kpi-sub">Agosto: 2,28×</div><span class="kpi-badge badge-warn">−18,4% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--bad)"><div class="kpi-label">CPA</div><div class="kpi-value" style="color:var(--bad)">26,50€</div><div class="kpi-sub">Agosto: 16,69€</div><span class="kpi-badge badge-bad">+58,8% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">AOV (ticket medio)</div><div class="kpi-value" style="color:var(--good)">49,36€</div><div class="kpi-sub">Agosto: 38,02€</div><span class="kpi-badge badge-good">+29,8% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--accent3)"><div class="kpi-label">Inversión</div><div class="kpi-value" style="color:var(--accent3)">1.431€</div><div class="kpi-sub">Agosto: 1.318€ · 47,70€/día</div><span class="kpi-badge badge-info">+8,5% vs agosto</span></div>
+</div>
+
+<div class="kpi-grid" style="margin-top:14px">
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Margen bruto / venta</div><div class="kpi-value" style="color:var(--good)">22,86€</div><div class="kpi-sub">Agosto: 21,33€</div><span class="kpi-badge badge-good">+7,2% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Alcance</div><div class="kpi-value" style="color:var(--good)">203.240</div><div class="kpi-sub">Agosto: 151.871 personas</div><span class="kpi-badge badge-good">+33,8% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Frecuencia media</div><div class="kpi-value" style="color:var(--good)">1,88×</div><div class="kpi-sub">Agosto: 2,05× · RTG 4,99×</div><span class="kpi-badge badge-good">−8,3% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--warn)"><div class="kpi-label">Añadidos al carrito</div><div class="kpi-value" style="color:var(--warn)">280</div><div class="kpi-sub">Agosto: 303 · CPATC 5,11€</div><span class="kpi-badge badge-warn">−7,6% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--accent)"><div class="kpi-label">Visitas al perfil de IG</div><div class="kpi-value">7.581</div><div class="kpi-sub">Agosto: 5.244 · 0,035€/visita</div><span class="kpi-badge badge-good">+44,6% vs agosto</span></div>
+  <div class="kpi-card" style="--accent-color:var(--accent)"><div class="kpi-label">Seguidores IG ganados</div><div class="kpi-value" style="color:var(--accent)">1.091</div><div class="kpi-sub">Métrica nueva en el export</div><span class="kpi-badge badge-info">0,24€ / seguidor</span></div>
+</div>
+
+<div class="alert alert-bad"><strong>🔴 La fuga del mes tiene nombre y apellidos: un creativo de reconocimiento metido en la campaña de conversión.</strong> El anuncio <code>sabes para que sirve? bueno</code> corrió dentro de <code>VIDEOS_WDN_PROS(TOFU)</code> y consumió <strong>182,79€ (13% del presupuesto total) para 103.479 impresiones, un CTR del 0,62% y CERO compras</strong>. El mismo vídeo, en su versión duplicada dentro de la campaña de Reconocimiento, rinde a <strong>8,07% de CTR y 6.584 visitas al perfil</strong>: es un creativo excelente — pero de notoriedad, no de venta. Descontándolo, el TOFU habría cerrado a <strong>CPA 28,36€ y ROAS 1,54×</strong> en lugar de 36,31€ y 1,20×. Es la corrección más barata y de mayor impacto disponible para octubre.</div>
+
+<div class="alert alert-good"><strong>✅ El retargeting es ya el motor de la cuenta.</strong> <code>WDR_RTG_CONV_EVRG_0626</code> dobla presupuesto (113€ → 329€) y entrega <strong>31 de las 54 compras del mes (57%), 1.660,68€ de los 2.665€ de ingresos (62%) y un ROAS de 5,04×</strong> con CPA de 10,62€ — el mejor de la cuenta por segundo mes. Y su ticket medio es de <strong>53,57€, un 23% por encima de la media</strong>: el tráfico caliente no solo compra más, compra más caro.</div>
+
+<div class="alert alert-good"><strong>📈 El ticket medio sube un 30% y el margen por venta mejora pese al ROAS peor.</strong> El AOV pasa de 38,02€ a <strong>49,36€</strong>, lo que deja un margen bruto publicitario de <strong>22,86€ por venta frente a los 21,33€ de agosto</strong>. Es el matiz que impide leer septiembre como un mal mes sin más: cada venta vale más. Lo que cae es el volumen (54 vs 79 compras), así que la contribución total baja de ~1.685€ a ~1.234€.</div>
+
+<div class="alert alert-warn"><strong>⚠️ El mapa de audiencia se ha dado la vuelta por completo.</strong> El bloque <strong>25–44</strong>, señalado durante tres meses como el candidato a recortar, es ahora el más rentable: con el <strong>24,4% del gasto femenino genera el 53% de los ingresos (ROAS 4,08×, AOV 78,96€)</strong>. El <strong>45–64</strong>, que era el ICP confirmado, cae a <strong>ROAS 1,09× con el 62,4% del presupuesto</strong>. Un solo mes no tumba tres de evidencia, pero el contraste es demasiado grande para ignorarlo: hay que testarlo en octubre antes de reasignar en firme.</div>
+
+<div class="alert alert-info"><strong>ℹ️ Notas estructurales del mes:</strong> las dos campañas principales y la de Reconocimiento entregaron los 30 días. <strong>VIDEOS FORMATO ADS y la campaña de tráfico a perfil se pararon el 17 de septiembre</strong>. El <strong>21 de septiembre</strong> se lanzó el adset <code>TEST_RELEVO_FRIO</code> (10 días, 80,64€, 2 compras). <code>CATALOGO RTG</code> no ha vuelto a entregar desde su parada del 17 de agosto, y <strong>RTG VIDEOS GANADORES sigue sin aparecer</strong> por el error de cuenta #3858231, ya por cuarto mes.</div>
+
+<div class="alert alert-warn"><strong>📌 Nota metodológica — el export de este mes viene incompleto y con otro esquema.</strong> Faltan tres cosas que sí estaban en agosto: el <strong>desglose por país</strong> (no se puede verificar que no haya fuga geográfica), la columna de <strong>ThruPlays</strong> (no hay Hold Rate) y las <strong>visitas a la página de destino</strong> (sin ellas no hay embudo de conversión completo ni seguimiento de la incidencia de tracking del 15 de agosto). Además, el ROAS llega ahora como columna directa en vez de calculado. Las secciones afectadas lo indican. Para octubre conviene recuperar la plantilla de columnas de agosto.</div>
+</div>
+
+<!-- ══════════ 02 ══════════ -->
+<div class="section"><div class="section-num">02</div><div class="section-title">Inversión</div>
+<p class="sec-intro">Dónde se ha ido el presupuesto. El reparto cambia de forma significativa respecto a agosto: el retargeting pasa del 11,7% al 23% del gasto y el TOFU baja del 71% al 58%.</p>
+
+<div class="bar-chart">
+  <div class="bar-row"><div class="bar-label">TOFU Conversión</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#3DBFAD,#7c3aed)">835€ · 58,4%</div></div><div class="bar-val">23 compras</div></div>
+  <div class="bar-row"><div class="bar-label">Retargeting broad</div><div class="bar-track"><div class="bar-fill" style="width:39.4%;background:linear-gradient(90deg,#3DBFAD,#7c3aed)">329€ · 23,0%</div></div><div class="bar-val">31 compras</div></div>
+  <div class="bar-row"><div class="bar-label">Reconocimiento IG</div><div class="bar-track"><div class="bar-fill" style="width:26.1%;background:linear-gradient(90deg,#3DBFAD,#7c3aed)">218€ · 15,2%</div></div><div class="bar-val">6.859 visitas perfil</div></div>
+  <div class="bar-row"><div class="bar-label">Tráfico perfil</div><div class="bar-track"><div class="bar-fill" style="width:5.8%;background:linear-gradient(90deg,#3DBFAD,#7c3aed)">49€ · 3,4%</div></div><div class="bar-val">722 visitas · parada 17</div></div>
+</div>
+
+<div class="dest-card">
+  <div class="dest-header" style="background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(16,185,129,.05))">
+    <div><div class="tag tag-rtg" style="margin-bottom:6px">🎯 RETARGETING · BROAD</div><div class="dest-title">WDR_RTG_CONV_EVRG_0626</div></div>
+    <span class="kpi-badge badge-good">ROAS 5,04×</span></div>
+  <div class="dest-metrics">
+    <div class="dest-metric"><div class="dm-label">Inversión</div><div class="dm-value">329€</div></div>
+    <div class="dest-metric"><div class="dm-label">Compras</div><div class="dm-value" style="color:var(--good)">31</div></div>
+    <div class="dest-metric"><div class="dm-label">Ventas</div><div class="dm-value">1.661€</div></div>
+    <div class="dest-metric"><div class="dm-label">CPA</div><div class="dm-value" style="color:var(--good)">10,62€</div></div>
+    <div class="dest-metric"><div class="dm-label">AOV</div><div class="dm-value" style="color:var(--good)">53,57€</div></div>
+    <div class="dest-metric"><div class="dm-label">Frecuencia</div><div class="dm-value" style="color:var(--bad)">4,99×</div></div>
+  </div>
+  <div class="dest-insight">El bloque que sostiene el mes: <strong>23% del gasto, 57% de las compras y 62% de los ingresos</strong>. Dobla presupuesto respecto a agosto y mejora el ROAS (4,11× → 5,04×). Pero su <strong>frecuencia de 4,99× sobre 9.577 personas</strong> es el doble del umbral de alerta: está exprimiendo un pool pequeño y no admite más presupuesto sin ampliarlo.</div>
+</div>
+
+<div class="dest-card">
+  <div class="dest-header" style="background:linear-gradient(135deg,rgba(239,68,68,.2),rgba(239,68,68,.05))">
+    <div><div class="tag tag-tofu" style="margin-bottom:6px">🔄 TOFU · PROSPECCIÓN</div><div class="dest-title">WDN_PROS(TOFU)_CONV_EVRG_0626</div></div>
+    <span class="kpi-badge badge-bad">ROAS 1,20×</span></div>
+  <div class="dest-metrics">
+    <div class="dest-metric"><div class="dm-label">Inversión</div><div class="dm-value">835€</div></div>
+    <div class="dest-metric"><div class="dm-label">Compras</div><div class="dm-value" style="color:var(--bad)">23</div></div>
+    <div class="dest-metric"><div class="dm-label">Ventas</div><div class="dm-value">1.005€</div></div>
+    <div class="dest-metric"><div class="dm-label">CPA</div><div class="dm-value" style="color:var(--bad)">36,31€</div></div>
+    <div class="dest-metric"><div class="dm-label">CTR</div><div class="dm-value" style="color:var(--bad)">1,52%</div></div>
+    <div class="dest-metric"><div class="dm-label">Frecuencia</div><div class="dm-value">2,11×</div></div>
+  </div>
+  <div class="dest-insight">El problema del mes. Con un 11% menos de presupuesto que en agosto, pasa de 63 a <strong>23 compras</strong> y su CPA se multiplica por 2,4 (14,88€ → 36,31€). El CTR se hunde del 2,78% al 1,52%. La causa principal está identificada y es corregible: <strong>182,79€ del presupuesto se fueron en un creativo de notoriedad</strong> (ver sección 06).</div>
+</div>
+
+<div class="dest-card">
+  <div class="dest-header" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(124,58,237,.05))">
+    <div><div class="tag tag-awa" style="margin-bottom:6px">📢 AWARENESS · VISITAS PERFIL</div><div class="dest-title">BOFU_Reconocimiento — Visitas Perfil</div></div>
+    <span class="kpi-badge badge-good">0,032€ / visita</span></div>
+  <div class="dest-metrics">
+    <div class="dest-metric"><div class="dm-label">Inversión</div><div class="dm-value">218€</div></div>
+    <div class="dest-metric"><div class="dm-label">Visitas perfil</div><div class="dm-value" style="color:var(--accent3)">6.859</div></div>
+    <div class="dest-metric"><div class="dm-label">Seguidores IG</div><div class="dm-value" style="color:var(--accent)">836</div></div>
+    <div class="dest-metric"><div class="dm-label">CTR</div><div class="dm-value" style="color:var(--good)">7,89%</div></div>
+    <div class="dest-metric"><div class="dm-label">CPM</div><div class="dm-value" style="color:var(--good)">1,93€</div></div>
+    <div class="dest-metric"><div class="dm-label">Frecuencia</div><div class="dm-value" style="color:var(--good)">1,32×</div></div>
+  </div>
+  <div class="dest-insight">El bloque más consistente de la cuenta. Alcanza a <strong>85.488 personas</strong> con frecuencia de 1,32× y CPM de 1,93€, y además aporta <strong>836 seguidores nuevos de Instagram</strong>. Es la única fuente de audiencia fresca que tiene la cuenta, y precisamente por eso es la palanca para desatascar el retargeting.</div>
+</div>
+
+<h3 class="sub">Reparto por conjunto de anuncios</h3>
+<div class="table-wrap"><table><thead><tr><th>Conjunto de anuncios</th><th>Inversión</th><th>% gasto</th><th>Compras</th><th>Ventas</th><th>CPA</th><th>ROAS</th><th>CTR</th><th>Frec.</th><th>Días</th></tr></thead><tbody>
+<tr><td class="td-name">VIDEOS_WDN_PROS(TOFU)</td><td>551,43€</td><td>38,5%</td><td class="num">18</td><td>813,60€</td><td style="color:var(--warn)">30,64€</td><td class="num" style="color:var(--warn)">1,48×</td><td style="color:var(--bad)">1,38%</td><td>1,96×</td><td>30</td></tr>
+<tr><td class="td-name">MIX_RTG_BROAD</td><td>329,22€</td><td>23,0%</td><td class="num" style="color:var(--good)">31</td><td>1.660,68€</td><td style="color:var(--good)">10,62€</td><td class="num" style="color:var(--good)">5,04×</td><td>3,16%</td><td style="color:var(--bad)">4,99×</td><td>30</td></tr>
+<tr><td class="td-name">BOFU_Reconocimiento</td><td>218,11€</td><td>15,2%</td><td class="num">0</td><td>0€</td><td style="color:var(--accent3)">—</td><td class="num" style="color:var(--accent3)">—</td><td style="color:var(--good)">7,89%</td><td style="color:var(--good)">1,32×</td><td>30</td></tr>
+<tr><td class="td-name">VIDEOS FORMATO ADS <span class="tag tag-eu">parada 17</span></td><td>202,97€</td><td>14,2%</td><td class="num">3</td><td>111,32€</td><td style="color:var(--bad)">67,66€</td><td class="num" style="color:var(--bad)">0,55×</td><td>2,17%</td><td>1,87×</td><td>17</td></tr>
+<tr><td class="td-name">TEST_RELEVO_FRIO <span class="tag tag-eu">desde 21</span></td><td>80,64€</td><td>5,6%</td><td class="num">2</td><td>79,80€</td><td style="color:var(--warn)">40,32€</td><td class="num" style="color:var(--warn)">0,99×</td><td style="color:var(--bad)">1,39%</td><td>1,66×</td><td>10</td></tr>
+<tr><td class="td-name">Nuevo conjunto de anuncios de Tráfico <span class="tag tag-eu">parada 17</span></td><td>48,65€</td><td>3,4%</td><td class="num">0</td><td>0€</td><td>—</td><td class="num">—</td><td style="color:var(--good)">7,52%</td><td style="color:var(--good)">1,27×</td><td>17</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-bad"><strong>VIDEOS FORMATO ADS se desploma y su parada fue acertada.</strong> Era el adset estrella de agosto (631,53€, 39 compras, ROAS 2,41×). En septiembre, en 17 días, gasta 202,97€ para <strong>3 compras y un ROAS de 0,55×</strong> — el peor del mes. Dos de sus creativos concentran el daño: <code>soy fisio de suelo pelvico</code> (94,77€, 1 compra, ROAS 0,47×) y <code>porfin me ha llegado</code> (72,96€, 1 compra, ROAS 0,46×), este último con ROAS 4,55× en agosto. Es fatiga creativa clásica, no un fallo de configuración.</div>
+</div>
+
+<!-- ══════════ 03 ══════════ -->
+<div class="section"><div class="section-num">03</div><div class="section-title">Resultados y Costes</div>
+<p class="sec-intro">Cada campaña contra su propio objetivo: las de conversión por CPA y ROAS, las de reconocimiento por coste por visita al perfil y seguidores ganados.</p>
+
+<div class="table-wrap"><table><thead><tr><th>Campaña</th><th>Objetivo</th><th>Gasto</th><th>Impresiones</th><th>CPM</th><th>CTR</th><th>CPC</th><th>Resultado principal</th><th>Coste / resultado</th></tr></thead><tbody>
+<tr><td class="td-name">WDN_PROS(TOFU)_CONV_EVRG_0626 <span class="tag tag-tofu">TOFU</span></td><td>Compra</td><td>835,04€</td><td>212.415</td><td>3,93€</td><td style="color:var(--bad)">1,52%</td><td>0,26€</td><td class="num">23 compras</td><td style="color:var(--bad)">36,31€</td></tr>
+<tr><td class="td-name">WDR_RTG_CONV_EVRG_0626 <span class="tag tag-rtg">RTG</span></td><td>Compra</td><td>329,22€</td><td>47.832</td><td>6,88€</td><td>3,16%</td><td>0,22€</td><td class="num" style="color:var(--good)">31 compras</td><td style="color:var(--good)">10,62€</td></tr>
+<tr><td class="td-name">BOFU_Reconocimiento — Visitas Perfil <span class="tag tag-awa">AWA</span></td><td>Visita perfil IG</td><td>218,11€</td><td>112.929</td><td style="color:var(--good)">1,93€</td><td style="color:var(--good)">7,89%</td><td>0,02€</td><td class="num">6.859 visitas · 836 seguidores</td><td style="color:var(--good)">0,032€</td></tr>
+<tr><td class="td-name">Visitas perfil Videos de ig <span class="tag tag-awa">AWA</span></td><td>Visita perfil</td><td>48,65€</td><td>9.767</td><td>4,98€</td><td style="color:var(--good)">7,52%</td><td>0,07€</td><td class="num">722 visitas · 141 seguidores</td><td>0,067€</td></tr>
+<tr><td class="td-name">CATALOGO RTG <span class="tag tag-eu">SIN ENTREGA</span></td><td>Compra</td><td>0,00€</td><td>0</td><td>—</td><td>—</td><td>—</td><td class="num">—</td><td>—</td></tr>
+<tr><td class="td-name">RTG VIDEOS GANADORES <span class="tag tag-eu">SIN ENTREGA</span></td><td>Compra</td><td>0,00€</td><td>0</td><td>—</td><td>—</td><td>—</td><td class="num">—</td><td>—</td></tr>
+</tbody></table></div>
+
+<h3 class="sub">Comparativa por bloque — Δ% vs agosto 2026</h3>
+<div class="table-wrap"><table><thead><tr><th>Bloque</th><th>Métrica</th><th>Agosto</th><th>Septiembre</th><th>Δ%</th><th>Lectura</th></tr></thead><tbody>
+
+<tr><td class="td-name" rowspan="7">TOFU Conversión <span class="tag tag-tofu">TOFU</span></td><td>Gasto</td><td>937,25€</td><td>835,04€</td><td class="num">−10,9%</td><td>Menos presupuesto y peor resultado</td></tr>
+<tr><td>CTR enlace</td><td>2,78%</td><td>1,52%</td><td class="num" style="color:var(--bad)">−45,3%</td><td>La señal más clara de la fuga creativa</td></tr>
+<tr><td>CPM</td><td>5,64€</td><td>3,93€</td><td class="num" style="color:var(--warn)">−30,3%</td><td>Impresiones más baratas… y mucho peores</td></tr>
+<tr><td>Carritos</td><td>225</td><td>112</td><td class="num" style="color:var(--bad)">−50,2%</td><td>Se parte por la mitad</td></tr>
+<tr><td>Compras</td><td>63</td><td>23</td><td class="num" style="color:var(--bad)">−63,5%</td><td>El golpe del mes</td></tr>
+<tr><td>CPA</td><td>14,88€</td><td>36,31€</td><td class="num" style="color:var(--bad)">+144,0%</td><td>Por encima del ticket medio otra vez</td></tr>
+<tr><td>Frecuencia</td><td>2,35×</td><td>2,11×</td><td class="num" style="color:var(--good)">−10,2%</td><td>No es saturación: es calidad de impresión</td></tr>
+
+<tr><td class="td-name" rowspan="6">Retargeting broad <span class="tag tag-rtg">RTG</span></td><td>Gasto</td><td>153,96€</td><td>329,22€</td><td class="num" style="color:var(--accent3)">+113,8%</td><td>Dobla presupuesto</td></tr>
+<tr><td>Compras</td><td>16</td><td>31</td><td class="num" style="color:var(--good)">+93,8%</td><td>Escala casi en proporción</td></tr>
+<tr><td>ROAS</td><td>4,11×</td><td>5,04×</td><td class="num" style="color:var(--good)">+22,6%</td><td>Mejora al escalar, poco habitual</td></tr>
+<tr><td>CPA</td><td>9,62€</td><td>10,62€</td><td class="num" style="color:var(--warn)">+10,4%</td><td>Sube poco pese a doblar inversión</td></tr>
+<tr><td>AOV</td><td>39,58€</td><td>53,57€</td><td class="num" style="color:var(--good)">+35,3%</td><td>El tráfico caliente compra más caro</td></tr>
+<tr><td>Frecuencia</td><td>3,49×</td><td>4,99×</td><td class="num" style="color:var(--bad)">+43,0%</td><td><strong>El techo que limita octubre</strong></td></tr>
+
+<tr><td class="td-name" rowspan="4">Reconocimiento <span class="tag tag-awa">AWA</span></td><td>Gasto</td><td>161,19€</td><td>218,11€</td><td class="num" style="color:var(--accent3)">+35,3%</td><td>Se refuerza, con buen criterio</td></tr>
+<tr><td>Visitas al perfil</td><td>5.244</td><td>6.859</td><td class="num" style="color:var(--good)">+30,8%</td><td>Coste por visita estable (0,032€)</td></tr>
+<tr><td>Alcance</td><td>69.618</td><td>85.488</td><td class="num" style="color:var(--good)">+22,8%</td><td>La fuente de audiencia nueva</td></tr>
+<tr><td>Frecuencia</td><td>1,56×</td><td>1,32×</td><td class="num" style="color:var(--good)">−15,4%</td><td>Margen de sobra para crecer</td></tr>
+
+</tbody></table></div>
+
+<div class="alert alert-warn"><strong>La paradoja del CPM: impresiones más baratas, resultados peores.</strong> El CPM del TOFU baja un 30,3% y el de la cuenta un 11,8%, pero el CTR del TOFU cae un 45%. Comprar impresiones baratas no es un logro si son de inventario que no convierte: el creativo fugado generó <strong>103.479 impresiones a 1,77€ de CPM con un 0,62% de CTR</strong>, inflando el volumen y hundiendo todos los promedios del bloque. Es el ejemplo perfecto de por qué el CPM nunca se lee solo.</div>
+
+<div class="kpi-grid" style="margin-top:20px">
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Coste por clic enlace</div><div class="kpi-value" style="color:var(--good)">0,10€</div><div class="kpi-sub">14.380 clics · Agosto: 0,11€</div></div>
+  <div class="kpi-card" style="--accent-color:var(--warn)"><div class="kpi-label">Coste por carrito</div><div class="kpi-value" style="color:var(--warn)">5,11€</div><div class="kpi-sub">280 ATC · Agosto: 4,35€</div></div>
+  <div class="kpi-card" style="--accent-color:var(--bad)"><div class="kpi-label">Coste por compra</div><div class="kpi-value" style="color:var(--bad)">26,50€</div><div class="kpi-sub">54 compras · AOV 49,36€</div></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Ratio CPA / AOV</div><div class="kpi-value" style="color:var(--good)">54%</div><div class="kpi-sub">Agosto: 44% · Sigue con margen</div></div>
+</div>
+
+<div class="alert alert-good"><strong>El CPA sigue por debajo del ticket, aunque con menos holgura.</strong> El coste de adquisición representa el <strong>54% del valor del pedido</strong> frente al 44% de agosto y el 92% de julio. La cuenta sigue siendo rentable en unidad —<strong>22,86€ brutos por venta, de hecho más que en agosto</strong>— pero el volumen cae, así que la contribución total del mes baja de ~1.685€ a ~1.234€.</div>
+</div>
+
+<!-- ══════════ 04 ══════════ -->
+<div class="section"><div class="section-num">04</div><div class="section-title">Conversión</div>
+<p class="sec-intro">El export de septiembre no incluye la columna de visitas a la página de destino, así que no es posible reconstruir el embudo completo ni comprobar si la incidencia de tracking del 15 de agosto sigue abierta. Lo que sí se puede medir son los tramos que dependen de carrito y compra.</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card" style="--accent-color:var(--muted)"><div class="kpi-label">Clic → Visita landing</div><div class="kpi-value" style="color:var(--muted)">n/d</div><div class="kpi-sub">Falta la columna en el export</div></div>
+  <div class="kpi-card" style="--accent-color:var(--warn)"><div class="kpi-label">Clic → Carrito</div><div class="kpi-value" style="color:var(--warn)">1,95%</div><div class="kpi-sub">Agosto: 2,60% · −25,2%</div></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Carrito → Compra</div><div class="kpi-value" style="color:var(--good)">19,3%</div><div class="kpi-sub">Agosto: 26,1% · −26,0%</div></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Valor por carrito</div><div class="kpi-value" style="color:var(--good)">9,52€</div><div class="kpi-sub">Agosto: 9,91€ · estable</div></div>
+</div>
+
+<div class="alert alert-warn"><strong>Los dos tramos medibles empeoran, y el origen es el mismo.</strong> La conversión clic→carrito cae un 25% y carrito→compra un 26%. Pero el desglose por bloque explica el agregado: el <strong>retargeting convierte 152 carritos en 31 compras (20,4%) con un coste por carrito de 2,17€</strong>, mientras el <strong>TOFU necesita 7,46€ por carrito y convierte 112 en 23 (20,5%)</strong>. La tasa carrito→compra es casi idéntica en ambos: lo que se ha degradado es la calidad del tráfico que llega al carrito, no el checkout.</div>
+
+<div class="alert alert-good"><strong>El valor por carrito aguanta.</strong> Cada añadido al carrito vale 9,52€ de ingreso esperado, prácticamente lo mismo que en agosto (9,91€) pese a que el volumen de carritos baja un 7,6%. Combinado con el AOV al alza, confirma que <strong>el problema de septiembre es de captación, no de conversión en la web</strong>.</div>
+
+<div class="alert alert-info"><strong>226 carritos sin comprar.</strong> Con 280 ATC y 54 compras, el mes deja <strong>226 carritos abandonados</strong> — a un ticket de 49,36€ son unos <strong>11.150€</strong> de venta potencial parada en el checkout, la cifra más alta de los cuatro meses analizados. El flow de recuperación en Klaviyo sigue sin activarse y es, un mes más, la palanca de mayor retorno sin coste publicitario.</div>
+</div>
+
+<!-- ══════════ 05 ══════════ -->
+<div class="section"><div class="section-num">05</div><div class="section-title">Audiencias</div>
+<p class="sec-intro">La sección que más cambia este mes. Todas las campañas siguen en broad, así que el reparto es la respuesta del algoritmo, no una decisión de segmentación.</p>
+
+<h3 class="sub">5a · Por género</h3>
+<div class="table-wrap"><table><thead><tr><th>Género</th><th>Gasto</th><th>% gasto</th><th>CTR</th><th>Carritos</th><th>Compras</th><th>Ventas</th><th>CPA</th><th>ROAS</th><th>AOV</th></tr></thead><tbody>
+<tr><td class="td-name">Mujer</td><td>1.348,26€</td><td>94,2%</td><td style="color:var(--good)">3,91%</td><td class="num">265</td><td class="num">50</td><td>2.525,18€</td><td>26,97€</td><td class="num">1,87×</td><td style="color:var(--good)">50,50€</td></tr>
+<tr><td class="td-name">Hombre</td><td>71,24€</td><td>5,0%</td><td style="color:var(--bad)">1,55%</td><td class="num">15</td><td class="num">4</td><td>140,22€</td><td style="color:var(--good)">17,81€</td><td class="num" style="color:var(--good)">1,97×</td><td>35,06€</td></tr>
+<tr><td class="td-name">No declarado</td><td>11,52€</td><td>0,8%</td><td>1,55%</td><td class="num">0</td><td class="num">0</td><td>0€</td><td>—</td><td class="num">0,00×</td><td>—</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-info"><strong>El gasto masculino se dobla pero sigue siendo marginal — y por primera vez rinde.</strong> Pasa del 2,4% al 5,0% del presupuesto (31€ → 71€) y devuelve <strong>4 compras con ROAS 1,97× y el mejor CPA por género (17,81€)</strong>. El volumen es demasiado bajo para concluir nada, pero es el segundo mes consecutivo en que el poco gasto masculino no se pierde. No procede excluirlo.</div>
+
+<h3 class="sub">5b · Por edad — el vuelco del mes</h3>
+<div class="bar-chart">
+  <div class="bar-row"><div class="bar-label">45–54</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#c98a52,#f59e0b)">463,30€ · 34,4%</div></div><div class="bar-val">17 compras · 1,27×</div></div>
+  <div class="bar-row"><div class="bar-label">55–64</div><div class="bar-track"><div class="bar-fill" style="width:81%;background:linear-gradient(90deg,#c98a52,#ef4444)">377,48€ · 28,0%</div></div><div class="bar-val">10 compras · 0,87×</div></div>
+  <div class="bar-row"><div class="bar-label">35–44</div><div class="bar-track"><div class="bar-fill" style="width:53%;background:linear-gradient(90deg,#3DBFAD,#10b981)">247,58€ · 18,4%</div></div><div class="bar-val">12 compras · 3,57×</div></div>
+  <div class="bar-row"><div class="bar-label">65+</div><div class="bar-track"><div class="bar-fill" style="width:36%;background:linear-gradient(90deg,#3DBFAD,#7c3aed)">166,31€ · 12,3%</div></div><div class="bar-val">6 compras · 1,60×</div></div>
+  <div class="bar-row"><div class="bar-label">25–34</div><div class="bar-track"><div class="bar-fill" style="width:18%;background:linear-gradient(90deg,#3DBFAD,#10b981)">81,40€ · 6,0%</div></div><div class="bar-val">5 compras · 5,64×</div></div>
+  <div class="bar-row"><div class="bar-label">18–24</div><div class="bar-track"><div class="bar-fill" style="width:3%;background:linear-gradient(90deg,#c98a52,#ef4444)">12,18€</div></div><div class="bar-val">0 compras</div></div>
+</div>
+
+<div class="table-wrap"><table><thead><tr><th>Tramo (mujer)</th><th>Gasto</th><th>% gasto</th><th>CTR</th><th>Carritos</th><th>CPATC</th><th>Compras</th><th>CPA</th><th>AOV</th><th>ROAS</th><th>ROAS ago</th></tr></thead><tbody>
+<tr><td class="td-name">25–34</td><td>81,40€</td><td>6,0%</td><td style="color:var(--good)">5,46%</td><td class="num">9</td><td>9,04€</td><td class="num">5</td><td style="color:var(--good)">16,28€</td><td style="color:var(--good)">91,85€</td><td class="num" style="color:var(--good)">5,64×</td><td>1,06×</td></tr>
+<tr><td class="td-name">35–44</td><td>247,58€</td><td>18,4%</td><td>3,31%</td><td class="num">35</td><td>7,07€</td><td class="num">12</td><td style="color:var(--good)">20,63€</td><td style="color:var(--good)">73,60€</td><td class="num" style="color:var(--good)">3,57×</td><td>1,94×</td></tr>
+<tr><td class="td-name">65+</td><td>166,31€</td><td>12,3%</td><td>4,15%</td><td class="num">64</td><td style="color:var(--good)">2,60€</td><td class="num">6</td><td>27,72€</td><td>44,49€</td><td class="num" style="color:var(--warn)">1,60×</td><td>1,68×</td></tr>
+<tr><td class="td-name">45–54</td><td>463,30€</td><td>34,4%</td><td>3,48%</td><td class="num">74</td><td>6,26€</td><td class="num">17</td><td style="color:var(--warn)">27,25€</td><td style="color:var(--bad)">34,50€</td><td class="num" style="color:var(--warn)">1,27×</td><td style="color:var(--good)">2,72×</td></tr>
+<tr><td class="td-name">55–64</td><td>377,48€</td><td>28,0%</td><td>4,17%</td><td class="num">79</td><td>4,78€</td><td class="num">10</td><td style="color:var(--bad)">37,75€</td><td style="color:var(--bad)">32,93€</td><td class="num" style="color:var(--bad)">0,87×</td><td style="color:var(--good)">2,25×</td></tr>
+<tr><td class="td-name">18–24</td><td>12,18€</td><td>0,9%</td><td style="color:var(--good)">6,88%</td><td class="num">4</td><td>3,04€</td><td class="num" style="color:var(--bad)">0</td><td style="color:var(--bad)">—</td><td>—</td><td class="num" style="color:var(--bad)">0,00×</td><td>—</td></tr>
+</tbody></table></div>
+
+<h3 class="sub">El contraste en dos bloques</h3>
+<div class="table-wrap"><table><thead><tr><th>Bloque (mujer)</th><th>% gasto</th><th>Compras</th><th>Ventas</th><th>% ingresos</th><th>CPA</th><th>AOV</th><th>ROAS</th></tr></thead><tbody>
+<tr><td class="td-name">25–44</td><td>24,4%</td><td class="num">17</td><td>1.342,39€</td><td class="num" style="color:var(--good)">53,2%</td><td style="color:var(--good)">19,35€</td><td style="color:var(--good)">78,96€</td><td class="num" style="color:var(--good)">4,08×</td></tr>
+<tr><td class="td-name">45–64</td><td class="num">62,4%</td><td class="num">27</td><td>915,87€</td><td class="num" style="color:var(--bad)">36,3%</td><td style="color:var(--bad)">31,14€</td><td style="color:var(--bad)">33,92€</td><td class="num" style="color:var(--bad)">1,09×</td></tr>
+<tr><td class="td-name">65+</td><td>12,3%</td><td class="num">6</td><td>266,92€</td><td>10,6%</td><td>27,72€</td><td>44,49€</td><td class="num" style="color:var(--warn)">1,60×</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-bad"><strong>El ICP que llevábamos tres meses confirmando se ha invertido.</strong> El <strong>25–44 recibe el 24,4% del presupuesto femenino y produce el 53,2% de los ingresos</strong> (ROAS 4,08×); el <strong>45–64 recibe el 62,4% y produce el 36,3%</strong> (ROAS 1,09×). En agosto era exactamente al revés: 45–64 iba a ROAS 2,72× y 2,25×, y el 25–34 a 1,06×. La diferencia está en el <strong>ticket</strong>: el 25–44 compra a <strong>78,96€ de media</strong> (packs y bundles) y el 45–64 a 33,92€ (Tronco suelto). El 45–64 sigue generando el <strong>56% de los carritos</strong>, así que no es que no le interese el producto: es que compra el artículo más barato.</div>
+
+<div class="alert alert-warn"><strong>Antes de reasignar, hay que descartar una explicación alternativa.</strong> Este vuelco coincide con dos cambios del mes: el retargeting duplicó presupuesto y es donde está el 35–44 más rentable (ROAS 9,50×), y el creativo fugado del TOFU repartió 103.479 impresiones basura que cayeron sobre todo en los tramos con más volumen — es decir, 45–64. <strong>Parte del hundimiento del 45–64 puede ser un artefacto de esa fuga, no una pérdida real de interés.</strong> La recomendación es no mover el reparto en firme hasta tener octubre limpio, y en su lugar <strong>testar deliberadamente el 25–44 con creatividad de bundle</strong>, que es la hipótesis que los datos sí sostienen.</div>
+
+<h3 class="sub">5c · Buyer persona por segmento</h3>
+<div class="persona-grid">
+  <div class="persona-card">
+    <div class="persona-emoji">💎</div>
+    <div class="persona-name">El hallazgo del mes</div>
+    <div class="persona-sub">Mujer 25–44 · ticket alto</div>
+    <p style="font-size:12.5px;color:var(--muted)">Compra a 78,96€ de media, más del doble que el 45–64. ROAS 4,08× con una cuarta parte del presupuesto. Es el perfil que se lleva packs y bundles en lugar del Tronco suelto, y el que más margen deja por venta. Merece una campaña propia con creatividad de kit completo.</p>
+    <div class="persona-tags"><span class="tag tag-tofu">ROAS 4,08×</span><span class="tag tag-tofu">AOV 78,96€</span><span class="tag tag-tofu">CPA 19,35€</span><span class="tag tag-tofu">17 compras</span></div>
+  </div>
+  <div class="persona-card">
+    <div class="persona-emoji">🛒</div>
+    <div class="persona-name">Volumen, poco ticket</div>
+    <div class="persona-sub">Mujer 45–64 · suelo pélvico 40+</div>
+    <p style="font-size:12.5px;color:var(--muted)">Sigue generando el 56% de los carritos del mes y los costes por carrito más bajos, pero compra el producto más barato (AOV 33,92€) y su ROAS cae a 1,09×. No es un segmento a abandonar: es un segmento al que hay que <strong>subirle el ticket</strong> con upsell y bundle, no bajarle el presupuesto.</p>
+    <div class="persona-tags"><span class="tag tag-rtg">ROAS 1,09×</span><span class="tag tag-rtg">AOV 33,92€</span><span class="tag tag-rtg">153 carritos</span><span class="tag tag-rtg">62,4% gasto</span></div>
+  </div>
+  <div class="persona-card">
+    <div class="persona-emoji">📦</div>
+    <div class="persona-name">El más barato en carrito</div>
+    <div class="persona-sub">Mujer 65+ · edad avanzada</div>
+    <p style="font-size:12.5px;color:var(--muted)">Coste por carrito de 2,60€, el más bajo de toda la cuenta, y 64 carritos con solo el 12% del presupuesto. Pero cierra mal (6 compras, CPA 27,72€). Es el mismo patrón de julio y agosto: entra, se interesa, no completa. La fricción de checkout en esta franja sigue sin abordarse.</p>
+    <div class="persona-tags"><span class="tag tag-awa">CPATC 2,60€</span><span class="tag tag-awa">64 carritos</span><span class="tag tag-awa">CPA 27,72€</span><span class="tag tag-awa">ROAS 1,60×</span></div>
+  </div>
+  <div class="persona-card">
+    <div class="persona-emoji">🚫</div>
+    <div class="persona-name">Sin resultado</div>
+    <div class="persona-sub">Mujer 18–24</div>
+    <p style="font-size:12.5px;color:var(--muted)">El CTR más alto de la cuenta (6,88%) y cero compras en cuatro meses. Engancha porque el contenido es llamativo, pero no es compradora del producto. Es ruido de broad, no una oportunidad: con 12,18€ de gasto no es urgente, pero tampoco hay que alimentarlo.</p>
+    <div class="persona-tags"><span class="tag tag-eu">CTR 6,88%</span><span class="tag tag-eu">0 compras</span><span class="tag tag-eu">4 carritos</span><span class="tag tag-eu">12,18€</span></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ 06 ══════════ -->
+<div class="section"><div class="section-num">06</div><div class="section-title">Creatividades</div>
+<p class="sec-intro">Sin la columna de ThruPlays en el export de este mes no hay Hook ni Hold Rate, así que las creatividades se evalúan por CTR, coste por carrito y ROAS. Aquí está la causa raíz del mes.</p>
+
+<div class="alert alert-bad"><strong>🔴 LA FUGA: el mismo vídeo, dos campañas, dos resultados opuestos.</strong> <code>sabes para que sirve? bueno</code> es un creativo de notoriedad excelente — y en la campaña equivocada se convierte en la mayor sangría del mes.</div>
+
+<div class="table-wrap"><table><thead><tr><th>Misma creatividad, distinto destino</th><th>Campaña</th><th>Gasto</th><th>Impresiones</th><th>CPM</th><th>CTR</th><th>Carritos</th><th>Compras</th><th>Resultado real</th></tr></thead><tbody>
+<tr><td class="td-name">sabes para que sirve? bueno</td><td><span class="tag tag-tofu">TOFU Conversión</span></td><td style="color:var(--bad)">182,79€</td><td>103.479</td><td>1,77€</td><td style="color:var(--bad)">0,62%</td><td class="num">3</td><td class="num" style="color:var(--bad)">0</td><td style="color:var(--bad)">0€ en ventas</td></tr>
+<tr><td class="td-name">sabes para que sirve? bueno — Copia</td><td><span class="tag tag-awa">Reconocimiento</span></td><td>202,58€</td><td>106.735</td><td>1,90€</td><td style="color:var(--good)">8,07%</td><td class="num">15</td><td class="num">0</td><td style="color:var(--good)">6.584 visitas · 785 seguidores</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-warn"><strong>Qué dice exactamente esta tabla.</strong> La pieza funciona: en su objetivo natural consigue un <strong>8,07% de CTR</strong> y es responsable de la mayor parte de los 836 seguidores nuevos. Pero dentro de una campaña optimizada a compra, Meta la sirvió en el inventario más barato que encontró —103.479 impresiones a 1,77€ de CPM— y el resultado fue un <strong>CTR trece veces inferior y ninguna venta</strong>. <strong>Acción inmediata: sacarla del adset de conversión.</strong> Eso solo devuelve ~183€/mes a creatividades que sí venden y recupera el CTR del bloque.</div>
+
+<h3 class="sub">6a · Top creatividades de conversión</h3>
+<div class="table-wrap"><table><thead><tr><th>Anuncio</th><th>Adset</th><th>Ranking</th><th>Gasto</th><th>CTR</th><th>Carritos</th><th>CPATC</th><th>Compras</th><th>CPA</th><th>ROAS</th></tr></thead><tbody>
+<tr><td class="td-name">v8_WDR_0726_RTG_EVRG_GARANTIA_PROD</td><td><span class="tag tag-rtg">RTG</span></td><td><span class="ad-rank rank-top">🏆 TOP 1</span></td><td>44,56€</td><td>2,15%</td><td class="num">14</td><td>3,18€</td><td class="num">6</td><td style="color:var(--good)">7,43€</td><td class="num" style="color:var(--good)">10,50×</td></tr>
+<tr><td class="td-name">ad ganador · el tronco que esta revolucionando</td><td><span class="tag tag-rtg">RTG</span></td><td><span class="ad-rank rank-top">🏆 TOP 2</span></td><td>122,90€</td><td style="color:var(--good)">3,99%</td><td class="num" style="color:var(--good)">80</td><td style="color:var(--good)">1,54€</td><td class="num">10</td><td style="color:var(--good)">12,29€</td><td class="num" style="color:var(--good)">4,92×</td></tr>
+<tr><td class="td-name">v3_WDR_0726_RTG_EVRG_GARANTIA_PROD</td><td><span class="tag tag-rtg">RTG</span></td><td><span class="ad-rank rank-top">🏆 TOP 3</span></td><td>97,27€</td><td>2,84%</td><td class="num">37</td><td>2,63€</td><td class="num" style="color:var(--good)">11</td><td style="color:var(--good)">8,84€</td><td class="num" style="color:var(--good)">4,04×</td></tr>
+<tr><td class="td-name">LLEVO MUCHOS AÑOS TRATANDO SUELOS PELVICOS</td><td><span class="tag tag-tofu">TOFU</span></td><td><span class="ad-rank rank-top">🏆 TOP TOFU</span></td><td>214,45€</td><td>2,66%</td><td class="num">53</td><td>4,05€</td><td class="num" style="color:var(--good)">11</td><td style="color:var(--good)">19,50€</td><td class="num" style="color:var(--good)">2,73×</td></tr>
+<tr><td class="td-name">1 de cada 7 Mujeres en España</td><td><span class="tag tag-tofu">TOFU</span></td><td><span class="ad-rank rank-mid">Prometedor</span></td><td>7,99€</td><td>3,08%</td><td class="num">3</td><td>2,66€</td><td class="num">2</td><td style="color:var(--good)">4,00€</td><td class="num" style="color:var(--good)">11,87×</td></tr>
+<tr><td class="td-name">ESTO QUE PARECE UN SIMPLE TRONCO</td><td><span class="tag tag-tofu">TOFU</span></td><td><span class="ad-rank rank-mid">Medio</span></td><td>105,06€</td><td>2,77%</td><td class="num">29</td><td>3,62€</td><td class="num">4</td><td style="color:var(--warn)">26,26€</td><td class="num" style="color:var(--warn)">1,26×</td></tr>
+<tr><td class="td-name">LLEVAS MESES HACIENDO KEGELS</td><td><span class="tag tag-eu">TEST FRÍO</span></td><td><span class="ad-rank rank-mid">Medio</span></td><td>44,00€</td><td style="color:var(--bad)">1,82%</td><td class="num">3</td><td>14,67€</td><td class="num">2</td><td style="color:var(--warn)">22,00€</td><td class="num" style="color:var(--warn)">1,81×</td></tr>
+<tr><td class="td-name">soy fisio de suelo pelvico</td><td><span class="tag tag-eu">FORMATO ADS</span></td><td><span class="ad-rank rank-bot">Bajo</span></td><td>94,77€</td><td>2,17%</td><td class="num">8</td><td style="color:var(--bad)">11,85€</td><td class="num">1</td><td style="color:var(--bad)">94,77€</td><td class="num" style="color:var(--bad)">0,47×</td></tr>
+<tr><td class="td-name">porfin me ha llegado</td><td><span class="tag tag-eu">FORMATO ADS</span></td><td><span class="ad-rank rank-bot">Fatigado</span></td><td>72,96€</td><td>2,29%</td><td class="num">4</td><td style="color:var(--bad)">18,24€</td><td class="num">1</td><td style="color:var(--bad)">72,96€</td><td class="num" style="color:var(--bad)">0,46×</td></tr>
+<tr><td class="td-name">sabes para que sirve? bueno</td><td><span class="tag tag-tofu">TOFU</span></td><td><span class="ad-rank rank-bot">🔴 FUGA</span></td><td style="color:var(--bad)">182,79€</td><td style="color:var(--bad)">0,62%</td><td class="num">3</td><td style="color:var(--bad)">60,93€</td><td class="num" style="color:var(--bad)">0</td><td style="color:var(--bad)">—</td><td class="num" style="color:var(--bad)">0,00×</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-good"><strong>Los estáticos de garantía son ya el activo más rentable de la cuenta.</strong> <code>v8</code> y <code>v3</code> suman <strong>141,83€ y 17 compras con ROAS de 10,50× y 4,04×</strong>. Junto con <code>ad ganador · el tronco que esta revolucionando</code> (80 carritos a 1,54€ cada uno, el coste por carrito más bajo del mes), los tres creativos de retargeting concentran <strong>27 de las 54 compras con 264,73€</strong>. La decisión de julio de concentrar el retargeting sigue dando frutos dos meses después.</div>
+
+<div class="alert alert-warn"><strong>Fatiga clara en los creativos de agosto.</strong> <code>porfin me ha llegado</code> pasa de ROAS 4,55× (agosto) a <strong>0,46×</strong>, y <code>aprovecha las ultimas unidades</code> —el que más gastó en agosto— queda reducido a 14,60€. El inventario creativo de TOFU se ha agotado: solo <code>LLEVO MUCHOS AÑOS TRATANDO SUELOS PELVICOS</code> aguanta el tipo (ROAS 2,73×, tercer mes consecutivo en el podio). <strong>La tanda de vídeo nueva es prioridad para octubre</strong>, y con el registro de briefings alternando semanas, toca planificarla ya.</div>
+
+<div class="alert alert-info"><strong>Señal a confirmar: <code>1 de cada 7 Mujeres en España</code>.</strong> Con solo 7,99€ en el TOFU entrega <strong>2 compras a CPA 4,00€ y ROAS 11,87×</strong>. El volumen es anecdótico y no se puede concluir nada, pero el ángulo de dato clínico encaja con el perfil 25–44 de ticket alto. Merece presupuesto dedicado en octubre para ver si sostiene.</div>
+</div>
+
+<!-- ══════════ 07 ══════════ -->
+<div class="section"><div class="section-num">07</div><div class="section-title">Ubicaciones</div>
+<p class="sec-intro">Rendimiento por ubicación en las campañas de conversión. Otro mes con cambio de jerarquía respecto al anterior.</p>
+
+<div class="placement-grid">
+  <div class="placement-card"><div class="placement-icon">📱</div><div class="placement-name">IG Stories</div><div class="placement-roas" style="color:var(--good)">4,50×</div><div style="font-size:11px;color:var(--muted);margin-top:4px">281€ · 22 compras</div></div>
+  <div class="placement-card"><div class="placement-icon">🎞️</div><div class="placement-name">FB Reels</div><div class="placement-roas" style="color:var(--good)">2,90×</div><div style="font-size:11px;color:var(--muted);margin-top:4px">56€ · 3 compras</div></div>
+  <div class="placement-card"><div class="placement-icon">📰</div><div class="placement-name">FB Feed</div><div class="placement-roas" style="color:var(--good)">2,09×</div><div style="font-size:11px;color:var(--muted);margin-top:4px">299€ · 12 compras</div></div>
+  <div class="placement-card"><div class="placement-icon">🖼️</div><div class="placement-name">IG Feed</div><div class="placement-roas" style="color:var(--warn)">1,27×</div><div style="font-size:11px;color:var(--muted);margin-top:4px">368€ · 13 compras</div></div>
+  <div class="placement-card"><div class="placement-icon">🎬</div><div class="placement-name">IG Reels</div><div class="placement-roas" style="color:var(--bad)">0,82×</div><div style="font-size:11px;color:var(--muted);margin-top:4px">134€ · 3 compras</div></div>
+</div>
+
+<div class="table-wrap"><table><thead><tr><th>Ubicación</th><th>Gasto</th><th>% gasto</th><th>CTR</th><th>CPM</th><th>Carritos</th><th>CPATC</th><th>Compras</th><th>CPA</th><th>ROAS</th><th>ROAS ago</th></tr></thead><tbody>
+<tr><td class="td-name">Instagram · Feed</td><td>367,69€</td><td>31,6%</td><td>2,34%</td><td>7,17€</td><td class="num">67</td><td>5,49€</td><td class="num">13</td><td style="color:var(--warn)">28,28€</td><td class="num" style="color:var(--warn)">1,27×</td><td style="color:var(--good)">2,84×</td></tr>
+<tr><td class="td-name">Facebook · Feed</td><td>298,62€</td><td>25,6%</td><td style="color:var(--bad)">0,94%</td><td style="color:var(--good)">2,22€</td><td class="num">46</td><td>6,49€</td><td class="num">12</td><td>24,88€</td><td class="num" style="color:var(--good)">2,09×</td><td style="color:var(--good)">3,66×</td></tr>
+<tr><td class="td-name">Instagram · Stories</td><td>280,83€</td><td>24,1%</td><td style="color:var(--good)">3,04%</td><td>7,84€</td><td class="num">83</td><td style="color:var(--good)">3,38€</td><td class="num" style="color:var(--good)">22</td><td style="color:var(--good)">12,76€</td><td class="num" style="color:var(--good)">4,50×</td><td>1,75×</td></tr>
+<tr><td class="td-name">Instagram · Reels</td><td>133,65€</td><td>11,5%</td><td>2,79%</td><td>6,48€</td><td class="num">29</td><td>4,61€</td><td class="num">3</td><td style="color:var(--bad)">44,55€</td><td class="num" style="color:var(--bad)">0,82×</td><td>1,52×</td></tr>
+<tr><td class="td-name">Facebook · Reels</td><td>56,43€</td><td>4,8%</td><td>2,63%</td><td>4,63€</td><td class="num">33</td><td style="color:var(--good)">1,71€</td><td class="num">3</td><td style="color:var(--good)">18,81€</td><td class="num" style="color:var(--good)">2,90×</td><td style="color:var(--good)">5,78×</td></tr>
+<tr><td class="td-name">Facebook · Stories</td><td>20,41€</td><td>1,8%</td><td style="color:var(--good)">7,98%</td><td>9,36€</td><td class="num">5</td><td>4,08€</td><td class="num">1</td><td>20,41€</td><td class="num" style="color:var(--warn)">1,81×</td><td style="color:var(--good)">10,66×</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-good"><strong>Instagram Stories recupera el primer puesto, y con holgura.</strong> Pasa de ROAS 1,75× a <strong>4,50×</strong> y entrega <strong>22 de las 54 compras con el mejor CPA del mes (12,76€)</strong> y el coste por carrito más bajo con volumen (3,38€). Es donde vive el retargeting, que es el bloque que funciona — pero también confirma el patrón que lleva cuatro meses repitiéndose: <strong>el formato vertical de Stories es el sitio natural de este producto</strong>.</div>
+
+<div class="alert alert-bad"><strong>Instagram Reels es la peor ubicación del mes, y Facebook Feed arrastra el CTR.</strong> IG Reels consume 133,65€ para <strong>3 compras a CPA 44,55€ (ROAS 0,82×)</strong>, perdiendo dinero. Facebook Feed mantiene un ROAS decente (2,09×) pero su <strong>CTR se hunde al 0,94%</strong> con un CPM de 2,22€: es ahí donde cayó la mayor parte de las impresiones basura del creativo fugado. Conviene volver a mirarlo en octubre con el TOFU ya limpio antes de tomar ninguna decisión — exactamente la misma cautela que acertó con Facebook en agosto.</div>
+</div>
+
+<!-- ══════════ 08 ══════════ -->
+<div class="section"><div class="section-num">08</div><div class="section-title">Canal B2B — Captación de Leads</div>
+<p class="sec-intro">El briefing estratégico sitúa el canal B2B —clínicas de fisioterapia, especialistas de suelo pélvico, centros de rehabilitación y estudios de pilates— como la línea de crecimiento prioritaria, con un ticket equivalente a 5–15 pedidos B2C.</p>
+
+<div class="alert alert-bad"><strong>⚠️ La captación de leads B2B de septiembre no aparece en los datos de Meta — este reporte no puede cuantificarla.</strong> Se han revisado las cuatro campañas con entrega, los seis conjuntos de anuncios y los 39 anuncios del mes: <strong>no existe ninguna campaña de generación de leads, ningún formulario instantáneo y ningún evento de lead registrado</strong>. Los únicos indicadores de resultado presentes en el export son compra en el píxel, visita al perfil y visitas totales al perfil. Dicho de otra forma: <strong>si ha habido captación B2B en septiembre, no se originó en Meta Ads ni quedó atribuida a esta cuenta publicitaria</strong>.</div>
+
+<div class="alert alert-info"><strong>Qué necesito para incorporarla al reporte de octubre.</strong> La captación pudo venir de tres sitios distintos, y cada uno se mide de forma diferente: <strong>(a)</strong> el lead magnet profesional descargado desde la web (se mide en Klaviyo o en el CRM, con UTMs), <strong>(b)</strong> LinkedIn Ads u outreach directo por email a clínicas (fuera de Meta por definición), o <strong>(c)</strong> tráfico orgánico derivado del perfil de Instagram, que este mes ha crecido en <strong>1.091 seguidores</strong>. Con el origen confirmado y el volumen de leads puedo construir una sección B2B completa — coste por lead, calidad y conversión a pedido— y empezar a seguirla mes a mes.</div>
+
+<div class="alert alert-warn"><strong>Dos señales en los datos que podrían guardar relación — con todas las cautelas.</strong> Son hipótesis, no conclusiones:</div>
+
+<div class="table-wrap"><table><thead><tr><th>Señal observada</th><th>Dato</th><th>Lectura posible</th><th>Cómo confirmarlo</th></tr></thead><tbody>
+<tr><td class="td-name">Salto del ticket medio en 25–44</td><td class="num" style="color:var(--good)">AOV 78,96€</td><td>Más del doble que el 45–64 (33,92€). Compatible con compras de pack o de varias unidades, que es el patrón de una profesional comprando para consulta — pero también con una consumidora que compra el bundle.</td><td>Cruzar con el detalle de pedidos de WooCommerce: nº de unidades y producto comprado por pedido.</td></tr>
+<tr><td class="td-name">AOV general al alza</td><td class="num" style="color:var(--good)">49,36€ (+29,8%)</td><td>El mayor salto de ticket de los cuatro meses analizados, sin cambios de precio conocidos.</td><td>Revisar si hay pedidos de 3+ unidades en el mes y de qué segmento vienen.</td></tr>
+<tr><td class="td-name">Crecimiento del perfil de Instagram</td><td class="num">+1.091 seguidores</td><td>La campaña de Reconocimiento ha traído 7.581 visitas al perfil a 0,032€. Si alguna fisioterapeuta llegó por ahí, el contacto habría ocurrido por DM y no deja rastro en Ads.</td><td>Revisar DMs y solicitudes de información profesional en el perfil durante septiembre.</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-good"><strong>Lo que sí se puede afirmar: la infraestructura para el B2B está hoy mejor que nunca.</strong> El perfil de Instagram ha ganado <strong>1.091 seguidores a 0,24€ cada uno</strong> y acumula 7.581 visitas en el mes. El funnel aprobado contempla un <strong>lead magnet profesional</strong> («Protocolo de rehabilitación de suelo pélvico en casa: guía para prescribir a tus pacientes») y un <strong>pack de muestra profesional</strong> que todavía no se han activado en Meta. Con el coste de visita al perfil en 0,032€, una campaña de captación B2B con formulario instantáneo es hoy mucho más barata de arrancar de lo que lo era en julio.</div>
+
+<div class="alert alert-info"><strong>Nota añadida: tampoco hay desglose por país este mes.</strong> El export de septiembre no incluye la dimensión geográfica, así que no se puede repetir la comprobación de agosto (100% España, sin fuga). No hay motivo para pensar que haya cambiado, pero queda sin verificar.</div>
+</div>
+
+<!-- ══════════ 09 ══════════ -->
+<div class="section"><div class="section-num">09</div><div class="section-title">Frecuencia y Saturación</div>
+<p class="sec-intro">Benchmark de alerta: TOFU de calentamiento &gt; 3× · MOFU/conversión &gt; 2,5×. Esta sección explica por qué el retargeting, pese a ser lo mejor de la cuenta, no se puede escalar más.</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Cuenta global</div><div class="kpi-value" style="color:var(--good)">1,88×</div><div class="kpi-sub">203.240 personas · Ago: 2,05×</div><span class="kpi-badge badge-good">−8,3%</span></div>
+  <div class="kpi-card" style="--accent-color:var(--bad)"><div class="kpi-label">Retargeting broad</div><div class="kpi-value" style="color:var(--bad)">4,99×</div><div class="kpi-sub">9.577 personas · Ago: 3,49×</div><span class="kpi-badge badge-bad">Doble del umbral</span></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">TOFU Conversión</div><div class="kpi-value" style="color:var(--good)">2,11×</div><div class="kpi-sub">100.465 personas · Ago: 2,35×</div><span class="kpi-badge badge-good">Margen disponible</span></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Reconocimiento</div><div class="kpi-value" style="color:var(--good)">1,32×</div><div class="kpi-sub">85.488 personas · Ago: 1,56×</div><span class="kpi-badge badge-good">Audiencia fresca</span></div>
+  <div class="kpi-card" style="--accent-color:var(--good)"><div class="kpi-label">Alcance total</div><div class="kpi-value" style="color:var(--good)">203.240</div><div class="kpi-sub">Agosto: 151.871</div><span class="kpi-badge badge-good">+33,8%</span></div>
+</div>
+
+<div class="alert alert-good"><strong>El aviso de agosto se ha corregido: el alcance vuelve a crecer.</strong> El reporte anterior señalaba que la cuenta invertía más y alcanzaba a menos gente. En septiembre, con un 8,5% más de presupuesto, el alcance sube un <strong>33,8% (151.871 → 203.240 personas)</strong> y la frecuencia global baja a 1,88×. El mérito es en buena parte del refuerzo de Reconocimiento, que alcanza a 85.488 personas con frecuencia 1,32×. <strong>La cuenta ha dejado de machacar a la misma gente.</strong></div>
+
+<div class="alert alert-bad"><strong>Pero el retargeting ha tocado techo de forma inequívoca.</strong> Frecuencia de <strong>4,99× sobre apenas 9.577 personas</strong> — el doble del umbral de alerta y casi el triple de la frecuencia media de la cuenta. Por tramos es todavía peor: <strong>45–54 a 5,27×, 55–64 a 5,55× y 65+ a 5,87×</strong>. Hoy rinde a ROAS 5,04×, pero <strong>subirle presupuesto en octubre sin ampliar el pool solo quemará la audiencia</strong>. La secuencia correcta es la que ya se apuntó en agosto y ahora es urgente: arreglar el TOFU para que vuelva a alimentar audiencia caliente, y solo después subir abajo del embudo.</div>
+
+<div class="alert alert-info"><strong>Dónde hay margen real.</strong> El <strong>TOFU está en 2,11×</strong> y el <strong>Reconocimiento en 1,32×</strong> sobre 85.488 personas a CPM de 1,93€. Es la combinación que puede ampliar el pool: el Reconocimiento trae gente nueva barata, el TOFU la convierte en audiencia de remarketing, y el retargeting la cierra. Esa cadena está hoy rota por el eslabón del medio.</div>
+</div>
+
+<!-- ══════════ 10 ══════════ -->
+<div class="section"><div class="section-num">10</div><div class="section-title">Evolución del Mes</div>
+<p class="sec-intro">Septiembre arranca bien y se degrada de forma progresiva. La curva es el reflejo exacto de la fuga creativa ganando peso a medida que avanza el mes.</p>
+
+<div class="chart-wrap">
+  <div class="chart-header"><div class="chart-title">ROAS, CTR e inversión por semana — campañas de conversión</div><div class="chart-leg"><span><span class="ld" style="background:var(--accent)"></span>Inversión</span><span><span class="ld" style="background:var(--good)"></span>ROAS</span></div></div>
+  <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:260px;overflow:visible">
+    <line x1="60" y1="30" x2="60" y2="220" stroke="rgba(255,255,255,.1)"/><line x1="60" y1="220" x2="790" y2="220" stroke="rgba(255,255,255,.1)"/>
+    <rect x="100" y="44" width="42" height="176" fill="#3DBFAD" opacity=".55" rx="3"/>
+    <rect x="148" y="48" width="42" height="172" fill="#10b981" rx="3"/>
+    <text x="121" y="38" text-anchor="middle" fill="#3DBFAD" font-size="10" font-family="DM Sans">280€</text>
+    <text x="169" y="42" text-anchor="middle" fill="#10b981" font-size="11" font-family="Syne" font-weight="700">2,89×</text>
+    <text x="145" y="240" text-anchor="middle" fill="#e8eaf0" font-size="11" font-family="Syne" font-weight="700">S1</text>
+    <text x="145" y="255" text-anchor="middle" fill="#6b7a9a" font-size="9" font-family="DM Sans">1–7 sept</text>
+
+    <rect x="242" y="43" width="42" height="177" fill="#3DBFAD" opacity=".55" rx="3"/>
+    <rect x="290" y="122" width="42" height="98" fill="#f59e0b" rx="3"/>
+    <text x="263" y="37" text-anchor="middle" fill="#3DBFAD" font-size="10" font-family="DM Sans">281€</text>
+    <text x="311" y="116" text-anchor="middle" fill="#f59e0b" font-size="11" font-family="Syne" font-weight="700">1,65×</text>
+    <text x="287" y="240" text-anchor="middle" fill="#e8eaf0" font-size="11" font-family="Syne" font-weight="700">S2</text>
+    <text x="287" y="255" text-anchor="middle" fill="#6b7a9a" font-size="9" font-family="DM Sans">8–14 sept</text>
+
+    <rect x="384" y="73" width="42" height="147" fill="#3DBFAD" opacity=".55" rx="3"/>
+    <rect x="432" y="82" width="42" height="138" fill="#10b981" rx="3"/>
+    <text x="405" y="67" text-anchor="middle" fill="#3DBFAD" font-size="10" font-family="DM Sans">233€</text>
+    <text x="453" y="76" text-anchor="middle" fill="#10b981" font-size="11" font-family="Syne" font-weight="700">2,32×</text>
+    <text x="429" y="240" text-anchor="middle" fill="#e8eaf0" font-size="11" font-family="Syne" font-weight="700">S3</text>
+    <text x="429" y="255" text-anchor="middle" fill="#6b7a9a" font-size="9" font-family="DM Sans">15–21 sept</text>
+
+    <rect x="526" y="39" width="42" height="181" fill="#3DBFAD" opacity=".55" rx="3"/>
+    <rect x="574" y="65" width="42" height="155" fill="#10b981" rx="3"/>
+    <text x="547" y="33" text-anchor="middle" fill="#3DBFAD" font-size="10" font-family="DM Sans">287€</text>
+    <text x="595" y="59" text-anchor="middle" fill="#10b981" font-size="11" font-family="Syne" font-weight="700">2,61×</text>
+    <text x="571" y="240" text-anchor="middle" fill="#e8eaf0" font-size="11" font-family="Syne" font-weight="700">S4</text>
+    <text x="571" y="255" text-anchor="middle" fill="#6b7a9a" font-size="9" font-family="DM Sans">22–28 sept</text>
+
+    <rect x="668" y="158" width="42" height="62" fill="#3DBFAD" opacity=".55" rx="3"/>
+    <rect x="716" y="146" width="42" height="74" fill="#ef4444" rx="3"/>
+    <text x="689" y="152" text-anchor="middle" fill="#3DBFAD" font-size="10" font-family="DM Sans">82€</text>
+    <text x="737" y="140" text-anchor="middle" fill="#ef4444" font-size="11" font-family="Syne" font-weight="700">1,25×</text>
+    <text x="713" y="240" text-anchor="middle" fill="#e8eaf0" font-size="11" font-family="Syne" font-weight="700">S5</text>
+    <text x="713" y="255" text-anchor="middle" fill="#6b7a9a" font-size="9" font-family="DM Sans">29–30 sept</text>
+  </svg>
+</div>
+
+<div class="table-wrap"><table><thead><tr><th>Semana (conversión)</th><th>Inversión</th><th>Impresiones</th><th>CTR</th><th>CPM</th><th>Carritos</th><th>Compras</th><th>Ventas</th><th>ROAS</th><th>CPA</th></tr></thead><tbody>
+<tr><td class="td-name">S1 · 1–7 sept</td><td>280,12€</td><td>43.651</td><td style="color:var(--good)">2,68%</td><td>6,42€</td><td class="num">75</td><td class="num" style="color:var(--good)">17</td><td>810,41€</td><td class="num" style="color:var(--good)">2,89×</td><td style="color:var(--good)">16,48€</td></tr>
+<tr><td class="td-name">S2 · 8–14 sept</td><td>281,34€</td><td>47.566</td><td>2,63%</td><td>5,91€</td><td class="num">82</td><td class="num">12</td><td>463,05€</td><td class="num" style="color:var(--warn)">1,65×</td><td style="color:var(--warn)">23,44€</td></tr>
+<tr><td class="td-name">S3 · 15–21 sept</td><td>233,36€</td><td>36.738</td><td>2,81%</td><td>6,35€</td><td class="num">58</td><td class="num">10</td><td>540,58€</td><td class="num" style="color:var(--warn)">2,32×</td><td style="color:var(--warn)">23,34€</td></tr>
+<tr><td class="td-name">S4 · 22–28 sept</td><td>287,10€</td><td style="color:var(--bad)">93.929</td><td style="color:var(--bad)">1,08%</td><td style="color:var(--bad)">3,06€</td><td class="num">41</td><td class="num">12</td><td>748,04€</td><td class="num" style="color:var(--good)">2,61×</td><td>23,92€</td></tr>
+<tr><td class="td-name">S5 · 29–30 sept <span class="tag tag-eu">2 días</span></td><td>82,34€</td><td style="color:var(--bad)">38.363</td><td style="color:var(--bad)">0,71%</td><td style="color:var(--bad)">2,15€</td><td class="num">8</td><td class="num">3</td><td>103,32€</td><td class="num" style="color:var(--bad)">1,25×</td><td style="color:var(--bad)">27,45€</td></tr>
+</tbody></table></div>
+
+<div class="alert alert-bad"><strong>La huella de la fuga está en las dos últimas semanas.</strong> Entre la S3 y la S5, las impresiones de conversión se disparan de 36.738 a <strong>93.929 y luego 38.363 en solo dos días</strong>, mientras el <strong>CTR se desploma del 2,81% al 1,08% y al 0,71%</strong> y el CPM baja a 2,15€. Ese es exactamente el perfil del creativo de notoriedad acaparando entrega en inventario barato. La S1, antes de que ganara peso, cerró a <strong>ROAS 2,89× y CPA 16,48€</strong> — en línea con agosto. <strong>Septiembre no fue un mal mes de principio a fin: fue un mes que se estropeó sobre la marcha.</strong></div>
+
+<h3 class="sub">Cambios estructurales del mes</h3>
+<div class="steps">
+  <div class="step-card"><div class="step-priority">🔴</div><div class="step-body"><h4>Todo el mes · Creatividad de notoriedad activa en la campaña de conversión</h4><p><code>sabes para que sirve? bueno</code> acumula <strong>182,79€ y 103.479 impresiones sin una sola compra</strong> dentro de <code>VIDEOS_WDN_PROS(TOFU)</code>. Su peso crece a lo largo del mes, lo que explica la degradación semanal. <strong>Corrección pendiente e inmediata.</strong></p></div></div>
+  <div class="step-card"><div class="step-priority">🟢</div><div class="step-body"><h4>Todo el mes · Escalado del retargeting</h4><p>De 153,96€ a 329,22€ (+113,8%) con el ROAS subiendo de 4,11× a <strong>5,04×</strong>. Escalar mejorando el retorno es poco habitual y confirma que las creatividades de garantía tienen recorrido. El límite ahora es el tamaño del pool, no la creatividad.</p></div></div>
+  <div class="step-card"><div class="step-priority">🟡</div><div class="step-body"><h4>17 sept · Parada de VIDEOS FORMATO ADS y de la campaña de tráfico a perfil</h4><p>FORMATO ADS llevaba 202,97€ con 3 compras y ROAS 0,55× — la parada fue acertada. La campaña de tráfico a perfil había entregado 722 visitas y 141 seguidores a 0,067€; se solapaba con BOFU_Reconocimiento, que hace lo mismo a menos de la mitad de coste.</p></div></div>
+  <div class="step-card"><div class="step-priority">🟣</div><div class="step-body"><h4>21 sept · Lanzamiento de TEST_RELEVO_FRIO</h4><p>Diez días, 80,64€, 2 compras y ROAS 0,99×. Su mejor pieza es <code>LLEVAS MESES HACIENDO KEGELS</code> (44,00€, 2 compras, ROAS 1,81×). Todavía sin volumen para valorar; merece seguir en octubre con el TOFU ya limpio para poder leerlo bien.</p></div></div>
+  <div class="step-card"><div class="step-priority">🟡</div><div class="step-body"><h4>Cuarto mes · RTG VIDEOS GANADORES y CATALOGO RTG sin entrega</h4><p>El error de cuenta <strong>#3858231</strong> sigue sin resolverse desde julio, y el catálogo no ha vuelto desde su parada del 17 de agosto. Con el retargeting demostrando ROAS 5,04×, cada mes que esa capa sigue apagada tiene un coste de oportunidad creciente.</p></div></div>
+</div>
+</div>
+
+<!-- ══════════ 11 ══════════ -->
+<div class="section"><div class="section-num">11</div><div class="section-title">Preguntas y Conclusiones del Mes</div>
+
+<h3 class="sub">Las preguntas del mes</h3>
+
+<div class="dest-card" style="margin-bottom:12px"><div class="dest-header" style="background:linear-gradient(135deg,rgba(16,185,129,.13),rgba(16,185,129,.03))"><div class="dest-title" style="font-size:14px">¿Qué campañas han funcionado mejor y por qué?</div></div><div style="padding:16px 20px;font-size:13px;color:var(--muted);line-height:1.65">Sin discusión, <strong>WDR_RTG_CONV_EVRG_0626</strong>: con el 23% del presupuesto genera el <strong>57% de las compras y el 62% de los ingresos</strong>, a ROAS 5,04× y CPA 10,62€. Dobla inversión y además mejora el retorno. La razón es la misma que en agosto: pocas creatividades con presupuesto suficiente, todas ellas validadas —los estáticos de garantía <code>v8</code> y <code>v3</code> y el <code>ad ganador</code>—. En el lado de notoriedad, <strong>BOFU_Reconocimiento</strong> entrega 6.859 visitas al perfil a 0,032€ y 836 seguidores nuevos con frecuencia de 1,32×.</div></div>
+
+<div class="dest-card" style="margin-bottom:12px"><div class="dest-header" style="background:linear-gradient(135deg,rgba(124,58,237,.13),rgba(124,58,237,.03))"><div class="dest-title" style="font-size:14px">¿Qué campañas se han pausado o modificado?</div></div><div style="padding:16px 20px;font-size:13px;color:var(--muted);line-height:1.65">Se pararon <strong>VIDEOS FORMATO ADS</strong> y <strong>la campaña de tráfico a perfil</strong> el 17 de septiembre, y se lanzó <strong>TEST_RELEVO_FRIO</strong> el 21. El retargeting dobló presupuesto. <strong>CATALOGO RTG</strong> no ha vuelto a entregar desde el 17 de agosto y <strong>RTG VIDEOS GANADORES</strong> sigue bloqueada por el error #3858231, ya por cuarto mes.</div></div>
+
+<div class="dest-card" style="margin-bottom:12px"><div class="dest-header" style="background:linear-gradient(135deg,rgba(124,58,237,.13),rgba(124,58,237,.03))"><div class="dest-title" style="font-size:14px">¿Qué pruebas se han realizado?</div></div><div style="padding:16px 20px;font-size:13px;color:var(--muted);line-height:1.65"><strong>(1) Escalado del retargeting</strong> (×2,1 presupuesto): resultado positivo, ROAS sube a 5,04×, pero la frecuencia llega a 4,99× y marca el techo. <strong>(2) TEST_RELEVO_FRIO</strong>, nuevo adset de relevo para frío desde el 21: 2 compras en 10 días, pendiente de leer con el TOFU limpio. <strong>(3) Campaña de tráfico a perfil independiente</strong>: funcionaba (0,067€/visita) pero se solapaba con Reconocimiento, que lo hace a 0,032€ — parada correcta. <strong>Prueba no intencionada y la más instructiva del mes:</strong> el mismo vídeo en conversión y en notoriedad, con CTR del 0,62% y del 8,07% respectivamente.</div></div>
+
+<div class="dest-card" style="margin-bottom:12px"><div class="dest-header" style="background:linear-gradient(135deg,rgba(61,191,173,.13),rgba(61,191,173,.03))"><div class="dest-title" style="font-size:14px">¿Qué cambios se harán para el mes siguiente?</div></div><div style="padding:16px 20px;font-size:13px;color:var(--muted);line-height:1.65"><strong>(a)</strong> Sacar <code>sabes para que sirve? bueno</code> del adset de conversión — libera ~183€/mes. <strong>(b)</strong> Producir tanda nueva de vídeo para TOFU: el inventario está fatigado y solo una pieza aguanta. <strong>(c)</strong> No subir presupuesto al retargeting hasta ampliar el pool; reforzar en su lugar Reconocimiento, que trae audiencia fresca a 1,93€ de CPM. <strong>(d)</strong> Testar el 25–44 con creatividad de bundle, sin tocar todavía el reparto del 45–64. <strong>(e)</strong> Activar el flow de carrito abandonado: 226 carritos sin recuperar. <strong>(f)</strong> Definir el origen y la medición del canal B2B. <strong>(g)</strong> Recuperar en el export las columnas de país, ThruPlays y visitas a la landing.</div></div>
+
+<div class="dest-card" style="margin-bottom:12px"><div class="dest-header" style="background:linear-gradient(135deg,rgba(245,158,11,.13),rgba(245,158,11,.03))"><div class="dest-title" style="font-size:14px">¿Qué oportunidades o problemas se han detectado?</div></div><div style="padding:16px 20px;font-size:13px;color:var(--muted);line-height:1.65"><strong>Oportunidades:</strong> el segmento <strong>25–44 con AOV de 78,96€</strong> y ROAS 4,08× está claramente infrainvertido; <strong>Instagram Stories</strong> vuelve a liderar con CPA 12,76€; el perfil de IG ha ganado <strong>1.091 seguidores a 0,24€</strong>, una base real para activar el B2B; y hay <strong>226 carritos</strong> (~11.150€) recuperables sin coste publicitario. <strong>Problemas:</strong> la <strong>fuga creativa de 182,79€</strong>; el <strong>retargeting saturado a 4,99×</strong>, que impide escalar lo único que funciona; la <strong>fatiga del inventario creativo de TOFU</strong>; el error #3858231 sin resolver; y un <strong>export incompleto</strong> que deja sin medir país, Hold Rate y embudo web.</div></div>
+
+<h3 class="sub">Conclusiones del mes</h3>
+
+<div class="highlight-box" style="margin-bottom:14px;border-left:3px solid var(--good)"><h4>1 · ¿Qué ha funcionado?</h4><p>El <strong>retargeting</strong>: dobla presupuesto y mejora a <strong>ROAS 5,04×</strong>, aportando 31 de las 54 compras. Los <strong>estáticos de garantía</strong> <code>v8</code> y <code>v3</code> rinden a 10,50× y 4,04×. <strong>Instagram Stories</strong> recupera el liderazgo (22 compras, CPA 12,76€). El <strong>AOV sube un 29,8%</strong> hasta 49,36€ y el margen por venta mejora a 22,86€. Y el <strong>alcance crece un 33,8%</strong>, corrigiendo el aviso de techo de audiencia que dejaba agosto.</p></div>
+
+<div class="highlight-box" style="margin-bottom:14px;border-left:3px solid var(--bad)"><h4>2 · ¿Qué no ha funcionado?</h4><p>El <strong>TOFU se desploma</strong>: de 63 a 23 compras y CPA de 14,88€ a 36,31€, con <strong>182,79€ consumidos por un creativo de notoriedad</strong> colocado en una campaña de conversión. <strong>VIDEOS FORMATO ADS</strong> cae a ROAS 0,55× por fatiga creativa. <strong>Instagram Reels</strong> pierde dinero (0,82×). El <strong>retargeting se satura</strong> a 4,99×. Y el <strong>canal B2B no es medible</strong> con los datos disponibles.</p></div>
+
+<div class="highlight-box" style="margin-bottom:14px;border-left:3px solid var(--accent3)"><h4>3 · ¿Qué acciones se van a tomar el próximo mes?</h4><p><strong>(a)</strong> Limpiar el adset de conversión sacando la creatividad de notoriedad — es la acción de mayor impacto y coste cero. <strong>(b)</strong> Nueva tanda de vídeo para renovar el inventario de TOFU. <strong>(c)</strong> Reforzar Reconocimiento para ampliar el pool antes de volver a escalar el retargeting. <strong>(d)</strong> Test de bundle sobre el 25–44, manteniendo el reparto actual del 45–64 hasta tener un mes limpio. <strong>(e)</strong> Activar el flow de carrito abandonado. <strong>(f)</strong> Definir origen y medición del B2B con el equipo. <strong>(g)</strong> Corregir la plantilla de columnas del export.</p></div>
+
+<div class="highlight-box" style="margin-bottom:14px;border-left:3px solid var(--good)"><h4>4 · ¿Qué se espera mejorar y cómo se medirá?</h4><p>El objetivo de octubre es <strong>devolver el TOFU a terreno rentable sin perder lo ganado abajo</strong>: CPA de prospección por debajo de <strong>25€</strong> (hoy 36,31€), ROAS de cuenta por encima de <strong>2,2×</strong> y volumen de vuelta a las <strong>70+ compras</strong>, manteniendo el AOV por encima de 45€. Cuatro indicadores de seguimiento semanal: <strong>CTR del TOFU</strong> (objetivo &gt;2,5%, hoy 1,52%), <strong>frecuencia del retargeting</strong> (bajarla de 4,99× a &lt;3,5×), <strong>alcance nuevo mensual</strong> (sostener por encima de 200.000) y <strong>AOV</strong>. Revisión en cada optimización quincenal para corregir dentro del mes.</p></div>
+
+<div class="conclusion" style="margin-top:24px">
+<p>Septiembre 2026 cierra con <strong>1.431€ de inversión, 54 compras y 2.665€ en ventas atribuidas (ROAS 1,86×)</strong>. Es el primer mes que retrocede desde que la cuenta arrancó, pero el retroceso tiene una causa concreta, localizable y barata de corregir — que es la mejor noticia que puede dar un mes malo.</p>
+
+<p>La cuenta funcionó a dos velocidades. <strong>Abajo del embudo, el mejor mes de su historia</strong>: el retargeting dobla presupuesto y aun así mejora, cerrando a <strong>ROAS 5,04× y CPA 10,62€</strong>, con 31 de las 54 compras y el 62% de los ingresos. <strong>Arriba, un desplome</strong>: el TOFU pasa de 63 a 23 compras y su CPA se multiplica por 2,4.</p>
+
+<p>Y ese desplome tiene nombre. El creativo <code>sabes para que sirve? bueno</code> corrió todo el mes dentro de la campaña de conversión, consumiendo <strong>182,79€ para 103.479 impresiones, un CTR del 0,62% y cero compras</strong>. El mismo vídeo, en la campaña de Reconocimiento, rinde al <strong>8,07% de CTR</strong> y trae la mayor parte de los 836 seguidores nuevos. No es un mal anuncio: es un anuncio excelente en el sitio equivocado. Descontándolo, el TOFU habría cerrado a CPA 28,36€ en lugar de 36,31€, y la evolución semanal lo confirma — la S1, antes de que ganara peso, rindió a <strong>ROAS 2,89× y CPA 16,48€</strong>, en línea con agosto.</p>
+
+<p>Debajo de ese ruido hay dos señales que sí son estructurales y merecen decisiones. La primera: <strong>el ticket medio sube un 29,8% hasta 49,36€</strong>, el mayor salto de los cuatro meses analizados, y con él el margen bruto por venta mejora a 22,86€ pese al peor ROAS. La segunda: <strong>el mapa de audiencia se ha dado la vuelta</strong>. El 25–44, que llevábamos tres meses señalando como candidato a recortar, genera el <strong>53% de los ingresos con el 24% del presupuesto</strong> y un ticket de 78,96€, mientras el 45–64 cae a ROAS 1,09× comprando a 33,92€. La lectura no es «cambiar de ICP»: es que <strong>el 45–64 compra el producto barato y el 25–44 compra el pack</strong>. A uno hay que subirle el ticket, al otro darle más presupuesto. Conviene además ser prudente: parte del hundimiento del 45–64 puede ser artefacto de la fuga, así que la recomendación es testar sin reasignar en firme hasta tener octubre limpio.</p>
+
+<p>El aviso de agosto sobre el techo de audiencia se ha corregido a medias. <strong>El alcance total crece un 33,8%</strong> y la frecuencia global baja a 1,88×, gracias al refuerzo de Reconocimiento. Pero <strong>el retargeting se ha saturado a 4,99× sobre apenas 9.577 personas</strong>, el doble del umbral. Es decir: lo único que funciona bien es justo lo que no se puede escalar más. La cadena Reconocimiento → TOFU → Retargeting está rota por el eslabón del medio, y arreglar el TOFU es lo que desbloquea los otros dos.</p>
+
+<p>Sobre la <strong>captación de leads B2B</strong>, hay que ser claro: <strong>no aparece en los datos de Meta</strong>. Se han revisado las cuatro campañas, los seis adsets y los 39 anuncios del mes y no hay ninguna campaña de leads, ningún formulario ni ningún evento de lead. Si ha habido captación, se originó fuera de esta cuenta publicitaria. Lo que sí deja el mes es la mejor base que ha tenido el canal: <strong>1.091 seguidores nuevos de Instagram a 0,24€</strong> y 7.581 visitas al perfil a 0,032€. Con el lead magnet profesional del funnel todavía sin activar en Meta, montar una campaña de captación B2B es hoy sensiblemente más barato que en julio.</p>
+
+<p><strong>Tres focos para octubre.</strong> Primero, <strong>limpiar el TOFU</strong>: sacar la creatividad de notoriedad del adset de conversión y meter tanda nueva de vídeo, porque el inventario está fatigado y solo una pieza aguanta. Segundo, <strong>ampliar el pool antes de escalar</strong>: más Reconocimiento, que trae gente nueva a 1,93€ de CPM, para que el retargeting pueda crecer sin quemarse. Tercero, <strong>trabajar el ticket</strong>: test de bundle sobre el 25–44, upsell sobre el 45–64 y, de una vez, el flow de carrito abandonado — 226 carritos sin recuperar son unos 11.150€ parados en el checkout. El objetivo no es inventar nada nuevo: es devolver el TOFU a donde estaba en agosto sin perder lo que el retargeting ha conseguido.</p>
+</div>
+</div>
+
+<div class="footer">
+  <div>
+    <div class="brandmark" style="font-size:16px;opacity:.6;margin-bottom:6px">The Wooden Racoon<small>ONLY WOOD</small></div>
+    <div class="footer-credit">Reporte mensual Meta Ads · <strong>WDR · THE WOODEN RACOON</strong></div>
+  </div>
+  <div class="footer-credit">Caïman Agency · 01/09/2026 – 30/09/2026 · Atribución 7d clic / 1d vista · CONFIDENCIAL</div>
+</div>
+
+</body></html>
